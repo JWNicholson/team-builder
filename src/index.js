@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import Members from "./components/Members";
+
 import MemberForm from "./components/MemberForm";
 
 import "./index.css";
@@ -9,28 +10,28 @@ import "./index.css";
 function App() {
   const [members, setMembers] = useState([
     {
-     
-      name: "Bob",
-      email: "bob@Evans.com",
-      role: "HMFWIC"
+      name: "",
+      email: "",
+      role: "",
     }
   ]);
 
-  const addNewMember = members => {
+  const addNewMember = member => {
     const newMember = {
-        name: members.name,
-        email: members.email,
-        role: members.role
+      name: member.name,
+      email: member.email,
+      role: member.role
     };
     setMembers([...members, newMember]);
   };
 
   return (
+   
     <div className="App">
       <h1>Members</h1>
-      {/* we are going to pass a function down as a prop */}
+      {/* pass a function down as a prop */}
       <MemberForm addNewMember={addNewMember} />
-      <Members member={members} />
+      <Members members={members} />
     </div>
   );
 }
