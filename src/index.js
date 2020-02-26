@@ -7,20 +7,22 @@ import MemberForm from "./components/MemberForm";
 import "./index.css";
 
 function App() {
-  const [members, setMember] = useState([
+  const [members, setMembers] = useState([
     {
      
-      fName: "Bob",
-      lName: "Evans"
+      name: "Bob",
+      email: "bob@Evans.com",
+      role: "HMFWIC"
     }
   ]);
 
-  const addNewMember = member => {
+  const addNewMember = members => {
     const newMember = {
-        fName: members.lName,
-        lName: members.nName
+        name: members.name,
+        email: members.email,
+        role: members.role
     };
-    setMember([...member, newMember]);
+    setMembers([...members, newMember]);
   };
 
   return (

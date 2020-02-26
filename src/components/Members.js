@@ -4,13 +4,25 @@ const Member = props => {
   return (
     <div className="note-list">
         <h2>Members</h2>
-      {props.member.map(member => (
+    
+    
+    <div className="member" key={props.member.id}>
+    <p>Name: {props.member.name}<br></br> 
+    Email: {props.member.email}<br></br>
+    Role: {props.member.role}
+    </p>
+ </div>
+    
+    
+
+      {/* {props.member.map(member => (
         <div className="member" key={member.id}>
-           <p>First Name: {member.fName}<br></br> Last Name: {member.lName}</p>
-          <h2></h2>
-          <h2></h2>
+           <p>Name: {member.name}<br></br> 
+           Email: {member.email}<br></br>
+           Role: {member.role}
+           </p>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };
