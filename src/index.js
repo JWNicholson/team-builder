@@ -10,9 +10,9 @@ import "./index.css";
 function App() {
   const [members, setMembers] = useState([
     {
-      name: "",
-      email: "",
-      role: "",
+      name: "Bob",
+      email: "Evans",
+      role: "busboy",
     }
   ]);
 
@@ -31,6 +31,7 @@ function App() {
       <h1>Members</h1>
       {/* pass a function down as a prop */}
       <MemberForm addNewMember={addNewMember} />
+      <h2>Members</h2>
       <Members members={members} />
     </div>
   );
